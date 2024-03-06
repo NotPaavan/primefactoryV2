@@ -6,12 +6,16 @@ function preload() {
 
 var tf = 255;
 var th = 1.8;
+var bo = 0;
+var bo2 = 0;
+var bo3 = 0;
 
 function draw(){ 
     
   createCanvas(windowWidth, windowHeight);  
   background(148, 226, 255);
   
+  noStroke();
   fill(33, 33, 33, tf + 300);
   rect(0, 0, windowWidth, windowHeight);
   
@@ -39,5 +43,50 @@ function draw(){
   text('                    ™', 10, windowHeight-10);
   
   if (tf2 > 255) { th += 0.05; }
-  if (th > 3.7) {th -= 0.05;  th2 = 5;}
+  if (th > 3.7) {
+    th -= 0.05;  
+    th2 = 5;
+    
+    noFill();
+    strokeWeight(5);
+    stroke(255);
+    rect(windowWidth/6, windowHeight/2.5, windowWidth/1.5, windowHeight/9, 20);
+    noStroke();
+    fill(255, 255, 255, bo);
+    rect(windowWidth/6, windowHeight/2.5, windowWidth/1.5, windowHeight/9, 20);
+    fill(148, 226, 255);
+    textSize(windowWidth/13);
+    text('PLAY', windowWidth/2.4, windowHeight/2.05);
+
+    noFill();
+    strokeWeight(5);
+    stroke(255);
+    rect(windowWidth/6, windowHeight/1.75, windowWidth/1.5, windowHeight/9, 20);
+    noStroke();
+    fill(255, 255, 255, bo2);
+    rect(windowWidth/6, windowHeight/1.75, windowWidth/1.5, windowHeight/9, 20);
+    fill(148, 226, 255);
+    textSize(windowWidth/13);
+    text('what is this', windowWidth/3.4, windowHeight/1.52);
+    
+    noFill();
+    strokeWeight(5);
+    stroke(255);
+    rect(windowWidth/6, windowHeight/1.35, windowWidth/1.5, windowHeight/9, 20);
+    noStroke();
+    fill(255, 255, 255, bo3);
+    rect(windowWidth/6, windowHeight/1.35, windowWidth/1.5, windowHeight/9, 20);
+    fill(148, 226, 255);
+    textSize(windowWidth/13);
+    text('CREDITS', windowWidth/2.8, windowHeight/1.22);
+  }
+  
+  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/2.5 && mouseY < windowHeight/2.5+windowHeight/9) { bo += 25;}
+  else { bo = 0; }
+  
+  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/1.75 && mouseY < windowHeight/1.75+windowHeight/9) { bo2 += 25;}
+  else { bo2 = 0; }
+  
+  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/1.35 && mouseY < windowHeight/1.35+windowHeight/9) { bo3 += 25;}
+  else { bo3 = 0; }
 }
