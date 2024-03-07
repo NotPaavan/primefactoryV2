@@ -1,7 +1,7 @@
 function preload() {
   // Load your custom font here
   pf = loadFont('Knockout-HTF69-FullLiteweight-Regular.ttf');
-  ipf = loadFont('Knewave-Regular.ttf');
+  ipf = loadFont('NormalidadExtended-Thin.ttf');
 }
 
 var tf = 255;
@@ -12,35 +12,35 @@ var bo3 = 0;
 
 function draw(){ 
     
-  createCanvas(windowWidth, windowHeight);  
+  createCanvas(860, 745);  
   background(148, 226, 255);
   
   noStroke();
   fill(33, 33, 33, tf + 300);
-  rect(0, 0, windowWidth, windowHeight);
+  rect(0, 0, 860, 745);
   
   fill(255, 255, 255, tf);  
-  textFont(ipf, windowWidth/20);
-  text('the', windowWidth/2.1, windowHeight/3.5);
-  text('present', windowWidth/2.35, windowHeight/1.6);
+  textFont(ipf, 43);
+  text('the', 410, 270);
+  text('present', 366, 425);
   
-  textFont(ipf, windowWidth/8);
-  text('                    ™', windowWidth/10, windowHeight/2);
+  textFont(ipf, 80);
+  text('™', 690, 325);
   
-  textFont(pf, windowWidth/8);
-  text('INDIAN PRINCESSES', windowWidth/10, windowHeight/2);
+  textFont(pf, 107.5);
+  text('INDIAN PRINCESSES', 86, 372.5);
   
   tf -= 3;
   var tf2 = -tf-300;
-  var th2 = windowHeight/th;
+  var th2 = 745/th;
   
   fill(255, 255, 255, tf2);
-  textFont(pf, windowWidth/6);
-  text('PRIME FACTORY', windowWidth/12, th2);
-  textFont(pf, windowWidth/30);
-  text('INDIAN PRINCESSES', 10, windowHeight-10);
-  textFont(ipf, windowWidth/30);
-  text('                    ™', 10, windowHeight-10);
+  textFont(pf, 143);
+  text('PRIME FACTORY', 72, th2);
+  textFont(pf, 29);
+  text('INDIAN PRINCESSES', 10, 735);
+  textFont(ipf, 29);
+  text('™', 190, 735);
   
   if (tf2 > 255) { th += 0.05; }
   if (th > 3.7) {
@@ -50,43 +50,42 @@ function draw(){
     noFill();
     strokeWeight(5);
     stroke(255);
-    rect(windowWidth/6, windowHeight/2.5, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 300, 573, 83, 20);
     noStroke();
     fill(255, 255, 255, bo);
-    rect(windowWidth/6, windowHeight/2.5, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 300, 573, 83, 20);
     fill(148, 226, 255);
-    textSize(windowWidth/13);
-    text('PLAY', windowWidth/2.4, windowHeight/2.05);
+    textSize(66);
+    text('PLAY', 330, 365);
 
     noFill();
     strokeWeight(5);
     stroke(255);
-    rect(windowWidth/6, windowHeight/1.75, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 426, 573, 83, 20);
     noStroke();
     fill(255, 255, 255, bo2);
-    rect(windowWidth/6, windowHeight/1.75, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 426, 573, 83, 20);
     fill(148, 226, 255);
-    textSize(windowWidth/13);
-    text('what is this', windowWidth/3.4, windowHeight/1.52);
+    text('what is this', 225, 490);
     
     noFill();
     strokeWeight(5);
     stroke(255);
-    rect(windowWidth/6, windowHeight/1.35, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 552, 573, 83, 20);
     noStroke();
     fill(255, 255, 255, bo3);
-    rect(windowWidth/6, windowHeight/1.35, windowWidth/1.5, windowHeight/9, 20);
+    rect(143, 552, 573, 83, 20);
     fill(148, 226, 255);
-    textSize(windowWidth/13);
-    text('CREDITS', windowWidth/2.8, windowHeight/1.22);
+    text('CREDITS', 250, 615);
   }
   
-  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/2.5 && mouseY < windowHeight/2.5+windowHeight/9) { bo += 25;}
+  if (mouseX > 143 && mouseX < 716 && mouseY > 300 && mouseY < 380) { bo += 25;}
   else { bo = 0; }
   
-  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/1.75 && mouseY < windowHeight/1.75+windowHeight/9) { bo2 += 25;}
+  if (mouseX > 143 && mouseX < 716 && mouseY > 426 && mouseY < 509) { bo2 += 25;}
   else { bo2 = 0; }
   
-  if (mouseX > windowWidth/6 && mouseX < windowWidth/6+windowWidth/1.5 && mouseY > windowHeight/1.35 && mouseY < windowHeight/1.35+windowHeight/9) { bo3 += 25;}
+  if (mouseX > 143 && mouseX < 716 && mouseY > 552 && mouseY < 635) { bo3 += 25;}
   else { bo3 = 0; }
+
 }
